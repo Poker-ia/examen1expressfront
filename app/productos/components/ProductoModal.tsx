@@ -16,15 +16,15 @@ export default function ProductoModal({
   refresh
 }: any) {
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent>
+    <Dialog open={open} onOpenChange={setOpen} >
+      <DialogContent >
         <DialogHeader>
           <DialogTitle>
             {producto ? "Editar Producto" : "Nuevo Producto"}
           </DialogTitle>
         </DialogHeader>
 
-        <ProductoForm
+        <ProductoForm 
           producto={producto}
           close={() => setOpen(false)}
           refresh={refresh}

@@ -52,7 +52,7 @@ export default function ProductoForm({
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 w-full">
       <Input placeholder="Nombre" {...register("nombre")} />
 
       <Input
