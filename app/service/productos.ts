@@ -6,33 +6,31 @@ import { ActualizarProductoDTO, CrearProductoDTO, Producto } from "../types/prod
 
 
 // 🔹 Crear producto
-export const crearProducto = async (data: CrearProductoDTO): Promise<Producto> => {
-  const res = await api.post("/productos", data)
-  return res.data
+export const crearProducto = async (dataProducto: CrearProductoDTO): Promise<Producto> => {
+  const {data} = await api.post("/productos", dataProducto)
+  return data
 }
 
 
 // 🔹 Listar productos
 export const listarProductos = async (): Promise<Producto[]> => {
-  const res = await api.get("/productos")
-  return res.data
+  const {data} = await api.get("/productos")
+  return data
 }
 
 
 // 🔹 Obtener producto por ID
 export const obtenerProducto = async (id: string): Promise<Producto> => {
-  const res = await api.get(`/productos/${id}`)
-  return res.data
+  const {data} = await api.get(`/productos/${id}`) 
+  return data
+
 }
-
-
-// 🔹 Actualizar producto
 export const actualizarProducto = async (
   id: string,
-  data: ActualizarProductoDTO
+  dataActualizar: ActualizarProductoDTO
 ): Promise<Producto> => {
-  const res = await api.put(`/productos/${id}`, data)
-  return res.data
+  const {data} = await api.put(`/productos/${id}`, dataActualizar)
+  return data
 }
 
 
